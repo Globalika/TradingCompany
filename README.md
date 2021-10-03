@@ -1,1 +1,1 @@
-# TraidingCompany
+# TradingCompany
