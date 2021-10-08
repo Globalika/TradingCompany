@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.ConsoleUI", "TradingCompany.ConsoleUI\TradingCompany.ConsoleUI.csproj", "{773EE103-9FED-4A96-B7BA-5933C744EF95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.DAL", "TradingCompany.DAL\TradingCompany.DAL.csproj", "{026DDE83-C625-457C-BC36-4A121B7AB033}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{773EE103-9FED-4A96-B7BA-5933C744EF95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773EE103-9FED-4A96-B7BA-5933C744EF95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773EE103-9FED-4A96-B7BA-5933C744EF95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773EE103-9FED-4A96-B7BA-5933C744EF95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{026DDE83-C625-457C-BC36-4A121B7AB033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{026DDE83-C625-457C-BC36-4A121B7AB033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{026DDE83-C625-457C-BC36-4A121B7AB033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{026DDE83-C625-457C-BC36-4A121B7AB033}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FA9A9C9-46FB-4D67-A9B3-FCA22B8F702C}
+	EndGlobalSection
+EndGlobal
