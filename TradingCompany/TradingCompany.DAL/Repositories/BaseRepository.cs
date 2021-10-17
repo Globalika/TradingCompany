@@ -5,6 +5,7 @@ using TradingCompany.DAL.Core;
 using TradingCompany.DAL.Models.Entities.Abstract;
 using TradingCompany.DAL.Models.Filters.Abstract;
 using TradingCompany.DAL.Repositories.Abstract;
+using TradingCompany.DAL.Models;
 
 namespace TradingCompany.DAL.Repositories
 {
@@ -21,7 +22,6 @@ namespace TradingCompany.DAL.Repositories
             _tableName = tableName;
             commandBuilder = new DbCommandManager(_tableName);
             dbManager = new DbManager();
-
         }
 
         public TEntity Create(TEntity entity)
@@ -34,7 +34,6 @@ namespace TradingCompany.DAL.Repositories
 
             try
             {
-
                 entity.Id = Convert.ToUInt64(dbManager.GetScalarValue(commandText, parameters));
             }
             catch (Exception ex)
@@ -45,7 +44,6 @@ namespace TradingCompany.DAL.Repositories
             {
                 ConnectionManager.CloseConnections();
             }
-
             return entity;
         }
 
@@ -75,8 +73,6 @@ namespace TradingCompany.DAL.Repositories
             {
                 ConnectionManager.CloseConnections();
             }
-
-
             return entity;
         }
 
@@ -104,7 +100,6 @@ namespace TradingCompany.DAL.Repositories
             {
                 ConnectionManager.CloseConnections();
             }
-
         }
 
         public TEntity Get(TFilter filter = default(TFilter))
@@ -123,7 +118,6 @@ namespace TradingCompany.DAL.Repositories
                 reader.Read();
                 ConnectionManager.CloseConnections();
                 entity = FillEntity(reader);
-
 
                 return entity;
             }
@@ -153,7 +147,6 @@ namespace TradingCompany.DAL.Repositories
                 ConnectionManager.CloseConnections();
                 return entities;
             }
-
         }
         virtual internal TEntity FillEntity(DbDataReader reader)
         {
@@ -177,8 +170,8 @@ namespace TradingCompany.DAL.Repositories
         }
         virtual internal TFilter EntityToFilter(TEntity entity)
         {
-            //return ObjectsMapper.Get().Map<TEntity, TFilter>(entity);
-            return new TFilter();
+            return ObjectsMapper.Get().Map<TEntity, TFilter>(entity);
+            //return new TFilter();
         }
     }
 }

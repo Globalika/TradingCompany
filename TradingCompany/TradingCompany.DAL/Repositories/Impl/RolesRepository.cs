@@ -26,6 +26,8 @@ namespace TradingCompany.DAL.Repositories.Impl
                 Role entity = new Role();
                 entity.Id = Convert.ToUInt64(reader["Id"]);
                 entity.Name = reader["Name"].ToString();
+                entity.RowInsertTime = Convert.ToDateTime(reader["RowInsertTime"].ToString());
+                entity.RowUpdateTime = Convert.ToDateTime(reader["RowUpdateTime"].ToString());
 
                 return entity;
             }
@@ -59,6 +61,10 @@ namespace TradingCompany.DAL.Repositories.Impl
             {
                 throw new Exception(ex.Message);
             }
+        }
+        internal override List<DbParameter> GetParameters(Role entity, string prefix = "")
+        {
+            return GetParameters(EntityToFilter(entity), prefix);
         }
         internal override List<string> GetFilterValues(RoleFilter entity)
         {

@@ -35,7 +35,7 @@ namespace TradingCompany.ConsoleUI.RepoMenu
         {
             return repository.GetAll();
         }
-        public void OutputValues()
+        public virtual void OutputValues()
         {
             foreach (var entity in GetAll())
             {

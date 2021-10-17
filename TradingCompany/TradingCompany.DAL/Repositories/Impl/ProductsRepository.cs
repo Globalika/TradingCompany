@@ -29,6 +29,8 @@ namespace TradingCompany.DAL.Repositories.Impl
                 entity.Brand = reader["Brand"].ToString();
                 entity.ProducingCountry = reader["ProducingCountry"].ToString();
                 entity.Price = Convert.ToInt32(reader["Price"]);
+                entity.RowInsertTime = Convert.ToDateTime(reader["RowInsertTime"].ToString());
+                entity.RowUpdateTime = Convert.ToDateTime(reader["RowUpdateTime"].ToString());
 
                 return entity;
             }
@@ -74,6 +76,10 @@ namespace TradingCompany.DAL.Repositories.Impl
             {
                 throw new Exception(ex.Message);
             }
+        }
+        internal override List<DbParameter> GetParameters(Product entity, string prefix = "")
+        {
+            return GetParameters(EntityToFilter(entity), prefix);
         }
         internal override List<string> GetFilterValues(ProductFilter entity)
         {

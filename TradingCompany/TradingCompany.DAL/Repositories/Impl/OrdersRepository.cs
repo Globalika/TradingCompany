@@ -28,6 +28,8 @@ namespace TradingCompany.DAL.Repositories.Impl
                 entity.UserId = Convert.ToUInt64(reader["UserId"]);
                 entity.Destination = reader["Destination"].ToString();
                 entity.OrderDate = Convert.ToDateTime(reader["OrderDate"].ToString());
+                entity.RowInsertTime = Convert.ToDateTime(reader["RowInsertTime"].ToString());
+                entity.RowUpdateTime = Convert.ToDateTime(reader["RowUpdateTime"].ToString());
                 return entity;
             }
             catch (Exception ex)

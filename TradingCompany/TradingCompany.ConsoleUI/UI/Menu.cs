@@ -9,6 +9,7 @@ namespace TradingCompany.ConsoleUI.UI
         private List<string> MainMenuValues;
         private List<string> TablesMenuValues;
         private List<string> ActionsMenuValues;
+        private List<string> FinanceManagerMenuValues;
 
         private UserMenu userMenu;
         private SupplierToProductMenu suppToProdtMenu;
@@ -34,8 +35,9 @@ namespace TradingCompany.ConsoleUI.UI
             orderMenu = new OrderMenu();
 
             this.ActionsMenuValues = new List<string>() { "1. Create", "2. Delete", "3. Update", "4. Show", "5. Exit" };
-            this.TablesMenuValues = new List<string>() { "1. User", "2. Supplier", "3. SuppliersToProducts", "4. Roles", "5. Product", "6. OrderToProduct", "7. Order", "2. Exit" };
-            this.MainMenuValues = new List<string>() { "1. Tables", "2. Exit" };
+            this.TablesMenuValues = new List<string>() { "1. User", "2. Supplier", "3. SuppliersToProducts", "4. Roles", "5. Product", "6. OrderToProduct", "7. Order", "8. Exit" };
+            this.MainMenuValues = new List<string>() { "1. Admin Work Place", "2. Finance Manager Work Place","3. Exit" };
+            this.FinanceManagerMenuValues = new List<string>() { "1. Show all Orders", "2. Select Order with ID", "3. Sort Orders", "4. Generate a Report", "5. Exit" };
         }
         public void MainMenu()
         {
@@ -51,6 +53,46 @@ namespace TradingCompany.ConsoleUI.UI
                         TablesMenu();
                         break;
                     case ConsoleKey.D2:
+                        FinanceManagerMenu();
+                        break;
+                    case ConsoleKey.D3:
+                        action = ConsoleKey.Escape;
+                        break;
+                }
+            } while (action != ConsoleKey.Escape);
+        }
+        private void FinanceManagerMenu()
+        {
+            ConsoleKey action;
+            PrintMainMenu();
+            do
+            {
+                Console.Clear();
+                PrintFinanceManagerMenu();
+                action = Console.ReadKey(true).Key;
+                switch (action)
+                {
+                    case ConsoleKey.D1:
+                        orderToProductMenu.OutputValues(true);
+                        Console.WriteLine("Press 'Enter' key to continue.");
+                        Console.ReadKey();
+                        break;
+                    case ConsoleKey.D2:
+                        orderToProductMenu.OutputSelectedValue();
+                        Console.WriteLine("Press 'Enter' key to continue.");
+                        Console.ReadKey();
+                        break;
+                    case ConsoleKey.D3:
+                        orderToProductMenu.OutputSortedValues();
+                        Console.WriteLine("Press 'Enter' key to continue.");
+                        Console.ReadKey();
+                        break;
+                    case ConsoleKey.D4:
+                        orderToProductMenu.GenerateAReport();
+                        Console.WriteLine("Press 'Enter' key to continue.");
+                        Console.ReadKey();
+                        break;
+                    case ConsoleKey.D5:
                         action = ConsoleKey.Escape;
                         break;
                 }
@@ -135,6 +177,13 @@ namespace TradingCompany.ConsoleUI.UI
         private void PrintMainMenu()
         {
             foreach (string el in MainMenuValues)
+            {
+                Console.WriteLine(el);
+            }
+        }
+        private void PrintFinanceManagerMenu()
+        {
+            foreach (string el in FinanceManagerMenuValues)
             {
                 Console.WriteLine(el);
             }

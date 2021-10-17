@@ -27,6 +27,8 @@ namespace TradingCompany.DAL.Repositories.Impl
                 entity.Id = Convert.ToUInt64(reader["Id"]);
                 entity.ProductId = Convert.ToUInt64(reader["ProductId"]);
                 entity.SupplierId = Convert.ToUInt64(reader["SupplierId"]);
+                entity.RowInsertTime = Convert.ToDateTime(reader["RowInsertTime"].ToString());
+                entity.RowUpdateTime = Convert.ToDateTime(reader["RowUpdateTime"].ToString());
                 return entity;
             }
             catch (Exception ex)
@@ -63,6 +65,10 @@ namespace TradingCompany.DAL.Repositories.Impl
             {
                 throw new Exception(ex.Message);
             }
+        }
+        internal override List<DbParameter> GetParameters(SupplierToProduct entity, string prefix = "")
+        {
+            return GetParameters(EntityToFilter(entity), prefix);
         }
         internal override List<string> GetFilterValues(SupplierToProductFilter entity)
         {

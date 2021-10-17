@@ -50,6 +50,7 @@ namespace TradingCompany.DAL.Core
             command = string.Format("Update {0} " +
                     "Set " +
                     "{1} " +
+                    " ,RowUpdateTime = getutcdate()" +
                     "output inserted.Id " +
                     "{2} " +
                     ";", _tableName, values, condition);
@@ -89,10 +90,6 @@ namespace TradingCompany.DAL.Core
 
         public string GetDeleteCommand(List<string> filter)
         {
-            string commandText = string.Format("Delete from {0} " +
-                                       "output deleted.Id " +
-                                       "where Id = @Id", _tableName);
-
             string condition = "";
             string command = "";
 

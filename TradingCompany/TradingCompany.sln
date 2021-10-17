@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.ConsoleUI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.DAL", "TradingCompany.DAL\TradingCompany.DAL.csproj", "{026DDE83-C625-457C-BC36-4A121B7AB033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.UnitTests", "TradingCompany.UnitTests\TradingCompany.UnitTests.csproj", "{FBAA0AFD-D91D-4D81-BE40-41C2266D24E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{026DDE83-C625-457C-BC36-4A121B7AB033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{026DDE83-C625-457C-BC36-4A121B7AB033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{026DDE83-C625-457C-BC36-4A121B7AB033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBAA0AFD-D91D-4D81-BE40-41C2266D24E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBAA0AFD-D91D-4D81-BE40-41C2266D24E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBAA0AFD-D91D-4D81-BE40-41C2266D24E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAA0AFD-D91D-4D81-BE40-41C2266D24E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

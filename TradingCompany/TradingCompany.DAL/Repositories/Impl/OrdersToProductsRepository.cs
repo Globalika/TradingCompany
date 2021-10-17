@@ -24,10 +24,11 @@ namespace TradingCompany.DAL.Repositories.Impl
             try
             {
                 OrderToProduct entity = new OrderToProduct();
-                //entity.Id = Convert.ToUInt64(reader["Id"]);
                 entity.ProductId = Convert.ToUInt64(reader["ProductId"]);
                 entity.OrderId = Convert.ToUInt64(reader["OrderId"]);
                 entity.Quantity = Convert.ToInt32(reader["Quantity"]);
+                entity.RowInsertTime = Convert.ToDateTime(reader["RowInsertTime"].ToString());
+                entity.RowUpdateTime = Convert.ToDateTime(reader["RowUpdateTime"].ToString());
 
                 return entity;
             }
@@ -47,10 +48,6 @@ namespace TradingCompany.DAL.Repositories.Impl
             {
                 prefix = "@" + prefix;
                 List<DbParameter> parameters = new List<DbParameter>();
-                //if (filter.Id != null)
-                //{
-                //    parameters.Add(dbManager.CreateParameter(prefix + "Id", filter.Id, DbType.Int64));
-                //}
                 if (filter.ProductId != null)
                 {
                     parameters.Add(dbManager.CreateParameter(prefix + "ProductId", 50, filter.ProductId, DbType.Int64));
@@ -82,10 +79,6 @@ namespace TradingCompany.DAL.Repositories.Impl
             }
             List<string> valuesList = new List<string>();
 
-            //if (entity.Id != null)
-            //{
-            //    valuesList.Add("Id");
-            //}
             if (entity.ProductId != null)
             {
                 valuesList.Add("ProductId");

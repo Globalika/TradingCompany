@@ -15,6 +15,13 @@ namespace TradingCompany.DAL.Core
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["TRADING_COMPANY"].ConnectionString;
             return connection;
         }
+        public DbConnection CreateConnection(string connString)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(ConfigurationManager.AppSettings["provider"]);
+            DbConnection connection = factory.CreateConnection();
+            connection.ConnectionString = connString;
+            return connection;
+        }
         public void CloseConnection(DbConnection connection)
         {
             connection.Close();
@@ -156,41 +163,6 @@ namespace TradingCompany.DAL.Core
                     }
 
                     return command.ExecuteScalar();
-                }
-            }
-        }
-        public void InsertWithTransaction(string commandText, List<IDbDataParameter> parameters = null)
-        {
-            IDbTransaction transaction = null;
-
-            using (var connection = ConnectionManager.Get().GetConnection())
-            {
-                connection.Open();
-                transaction = connection.BeginTransaction();
-                using (var command = CreateDbCommand(connection, commandText))
-                {
-                    if (parameters != null)
-                    {
-                        foreach (var parameter in parameters)
-                        {
-                            command.Parameters.Add(parameter);
-                        }
-                    }
-
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                        transaction.Commit();
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                        throw new Exception(ex.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
                 }
             }
         }

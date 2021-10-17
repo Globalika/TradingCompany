@@ -2,7 +2,7 @@
 VALUES
 ('Admin'),
 ('Customer'),
-('OrdersManager');
+('FinanceManager');
 
 
 INSERT INTO tblProducts(Name, Brand, ProducingCountry, Price)
@@ -37,8 +37,8 @@ VALUES
 
 INSERT INTO tblUsers(FirstName, LastName, Email, HashPassword, RoleId)
 VALUES
-('Victor', 'Seredovych', 'victor.seredovich@gmail.com', 'xHashPasswordx', 3),
-('V', 'S', 'admin', '$MYHASH$V1$10000$DULDGIaj6rpI/9s0JCmzOivZEM9wi3FK9uGJw7wy6PtJVpi+', 3),
+('Volodymyr', 'Seredovych', 'volodymyr.seredovych@gmail.com', 'xHashPasswordx', 3),
+('V', 'S', 'admin', '$MYHASH$V1$10000$DULDGIaj6rpI/9s0JCmzOivZEM9wi3FK9uGJw7wy6PtJVpi+', 1),
 ('Fabian', 'Colon', 'eddellippaza-8223@yopmail.com', 'xHashPasswordx', 2),
 ('Rafael', 'Murray','0achille.binde91o@dmxs8.com', 'xHashPasswordx', 2),
 ('Connor', 'Valenzuela', '1christian.rahbes@cordlessduoclean.com', 'xHashPasswordx', 2),
@@ -53,13 +53,13 @@ VALUES
 
 INSERT INTO tblOrders(UserId, Destination, OrderDate)
 VALUES
-(3, 'Germany', convert(datetime,'20190918 10:34:09 PM', 5) ),
-(7, 'Germany', convert(datetime,'20190812 01:13:39 AM', 5) ),
-(8, 'France',  convert(datetime,'20190316 06:42:13 AM', 5) ),
-(4, 'USA',     convert(datetime,'20180516 11:35:23 PM', 5) ),
-(5, 'Finland', convert(datetime,'20190126 03:24:09 AM', 5) ),
-(3, 'USA',     convert(datetime,'20180315 04:12:21 AM', 5) ),
-(6, 'Ukrain',  convert(datetime,'20190212 10:51:12 PM', 5) );
+(3, 'Germany', convert(datetime,'20210918 10:34:09 PM', 5) ),
+(7, 'Germany', convert(datetime,'20210812 01:13:39 AM', 5) ),
+(8, 'France',  convert(datetime,'20210316 06:42:13 AM', 5) ),
+(4, 'USA',     convert(datetime,'20210516 11:35:23 PM', 5) ),
+(5, 'Finland', convert(datetime,'20210126 03:24:09 AM', 5) ),
+(3, 'USA',     convert(datetime,'20210315 04:12:21 AM', 5) ),
+(6, 'Ukraine',  convert(datetime,'20210212 10:51:12 PM', 5) );
 
 
 INSERT INTO tblOrdersToProducts(OrderId, ProductId, Quantity)

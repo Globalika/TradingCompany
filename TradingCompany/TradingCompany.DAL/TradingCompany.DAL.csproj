@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -62,6 +65,7 @@
     <Compile Include="Models\Filters\Impl\SupplierFilter.cs" />
     <Compile Include="Models\Filters\Impl\SupplierToProductFilter.cs" />
     <Compile Include="Models\Filters\Impl\UserFilter.cs" />
+    <Compile Include="Models\ObjectsMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Abstarct\IBaseRepository.cs" />
     <Compile Include="Repositories\Abstarct\IOrdersRepository.cs" />
@@ -80,7 +84,9 @@
     <Compile Include="Repositories\Impl\SuppliersToProductRepository.cs" />
     <Compile Include="Repositories\Impl\UsersRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Database\create_tables.sql" />
     <Content Include="Database\drop_tables.sql" />

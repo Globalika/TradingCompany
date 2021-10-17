@@ -18,7 +18,6 @@ namespace TradingCompany.ConsoleUI.RepoMenu.Impl
             product.ProducingCountry = Console.ReadLine().ToString();
             Console.Write("Brand: ");
             product.Brand = Console.ReadLine().ToString();
-
             return product;
         }
     }

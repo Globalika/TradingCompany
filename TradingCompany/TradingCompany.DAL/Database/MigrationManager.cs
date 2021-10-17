@@ -12,7 +12,6 @@ namespace TradingCompany.DAL.Database
             string path = System.IO.Path.GetFullPath(@"..\..\..\TradingCompany.DAL\Database\create_tables.sql");
             string script = File.ReadAllText(path);
             dbManager.ExecuteNonQuery(script);
-
             return true;
         }
         public bool DropTables()
@@ -21,7 +20,6 @@ namespace TradingCompany.DAL.Database
 
             string script = File.ReadAllText(path);
             dbManager.ExecuteNonQuery(script);
-
             return true;
         }
 
@@ -30,7 +28,6 @@ namespace TradingCompany.DAL.Database
             string path = System.IO.Path.GetFullPath(@"..\..\..\TradingCompany.DAL\Database\import_start_values.sql");
             string script = File.ReadAllText(path);
             dbManager.ExecuteNonQuery(script);
-
             return true;
         }
     }

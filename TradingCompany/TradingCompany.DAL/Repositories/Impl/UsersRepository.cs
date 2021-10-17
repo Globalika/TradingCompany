@@ -30,6 +30,8 @@ namespace TradingCompany.DAL.Repositories.Impl
                 entity.Email = reader["Email"].ToString();
                 entity.HashPassword = reader["HashPassword"].ToString();
                 entity.RoleId = Convert.ToUInt64(reader["RoleId"]);
+                entity.RowInsertTime = Convert.ToDateTime(reader["RowInsertTime"].ToString());
+                entity.RowUpdateTime = Convert.ToDateTime(reader["RowUpdateTime"].ToString());
 
                 return entity;
             }
@@ -79,6 +81,10 @@ namespace TradingCompany.DAL.Repositories.Impl
             {
                 throw new Exception(ex.Message);
             }
+        }
+        internal override List<DbParameter> GetParameters(User entity, string prefix = "")
+        {
+            return GetParameters(EntityToFilter(entity), prefix);
         }
         internal override List<string> GetFilterValues(UserFilter entity)
         {

@@ -4,3 +4,5 @@ C:\Users\volod\source\TradingCompany\TradingCompany\TradingCompany.DAL\bin\Debug
 C:\Users\volod\source\TradingCompany\TradingCompany\TradingCompany.DAL\bin\Debug\TradingCompany.DAL.pdb
 C:\Users\volod\source\TradingCompany\TradingCompany\TradingCompany.DAL\obj\Debug\TradingCompany.DAL.dll
 C:\Users\volod\source\TradingCompany\TradingCompany\TradingCompany.DAL\obj\Debug\TradingCompany.DAL.pdb
+C:\Users\volod\source\TradingCompany\TradingCompany\TradingCompany.DAL\bin\Debug\AutoMapper.dll
+C:\Users\volod\source\TradingCompany\TradingCompany\TradingCompany.DAL\bin\Debug\AutoMapper.xml

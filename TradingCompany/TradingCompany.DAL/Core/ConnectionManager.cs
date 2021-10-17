@@ -32,7 +32,7 @@ namespace TradingCompany.DAL.Core
                     {
                         if (connectionString == null)
                         {
-                            connectionString = ConfigurationManager.ConnectionStrings["TRADING_COMPANY"].ConnectionString; ;
+                            connectionString = ConfigurationManager.ConnectionStrings["TRADING_COMPANY"].ConnectionString;
                         }
                         instance = new ConnectionManager(connectionString);
                     }

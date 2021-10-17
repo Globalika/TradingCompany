@@ -1,6 +1,8 @@
 ﻿CREATE TABLE tblRoles(
     Id bigint IDENTITY(1,1) PRIMARY KEY not null ,
-    Name nvarchar(50) not null
+    Name nvarchar(50) not null,
+    RowInsertTime datetime2(7) default getutcdate(),
+    RowUpdateTime datetime2(7) default getutcdate()
 );
 
 
@@ -9,13 +11,17 @@ CREATE TABLE tblProducts(
     Name nvarchar(50) not null,
     Brand nvarchar(50) not null,
     ProducingCountry nvarchar(50) not null,
-    Price int not null
+    Price int not null,
+    RowInsertTime datetime2(7) default getutcdate(),
+    RowUpdateTime datetime2(7) default getutcdate()
 );
 
 
 CREATE TABLE tblSuppliers(
     Id bigint IDENTITY(1,1) PRIMARY KEY not null,
-    Name nvarchar(50) not null
+    Name nvarchar(50) not null,
+    RowInsertTime datetime2(7) default getutcdate(),
+    RowUpdateTime datetime2(7) default getutcdate()
 );
 
 
@@ -25,7 +31,9 @@ CREATE TABLE tblUsers(
     LastName nvarchar(50) not null,
     Email nvarchar(50) not null,
     HashPassword varchar(256) not null,
-    RoleId bigint not null
+    RoleId bigint not null,
+    RowInsertTime datetime2(7) default getutcdate(),
+    RowUpdateTime datetime2(7) default getutcdate()
 );
 
 ALTER TABLE tblUsers
@@ -41,7 +49,9 @@ CREATE TABLE tblOrders(
     Id bigint not null IDENTITY(1,1) PRIMARY KEY,
     UserId bigint not null, 
     Destination nvarchar(50) not null,
-    OrderDate DateTime not null
+    OrderDate DateTime not null,
+    RowInsertTime datetime2(7) default getutcdate(),
+    RowUpdateTime datetime2(7) default getutcdate()
 );
 
 ALTER TABLE tblOrders
@@ -56,7 +66,9 @@ ALTER TABLE tblOrders
 CREATE TABLE tblOrdersToProducts(
     OrderId bigint not null,
     ProductId bigint not null,
-    Quantity int not null
+    Quantity int not null,
+    RowInsertTime datetime2(7) default getutcdate(),
+    RowUpdateTime datetime2(7) default getutcdate()
 );
 
 ALTER TABLE tblOrdersToProducts
@@ -77,7 +89,9 @@ ALTER TABLE tblOrdersToProducts
 CREATE TABLE tblSuppliersToProducts(
     Id bigint not null IDENTITY(1,1) PRIMARY KEY,
     SupplierId bigint not null,
-    ProductId bigint not null 
+    ProductId bigint not null,
+    RowInsertTime datetime2(7) default getutcdate(),
+    RowUpdateTime datetime2(7) default getutcdate()
 );
 
 ALTER TABLE tblSuppliersToProducts
