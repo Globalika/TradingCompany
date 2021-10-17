@@ -33,5 +33,5 @@
 
 # dir
 
-/packages
-/TestResults
+*/packages
+*/TestResults
