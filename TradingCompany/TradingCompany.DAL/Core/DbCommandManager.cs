@@ -40,7 +40,7 @@ namespace TradingCompany.DAL.Core
             if (filter != null && filter.Count > 0)
             {
                 condition = string.Format("Where {0}",
-                    string.Format(filter[0] + " = @" + prefix) + filter.Aggregate((a, b) => a + "AND " + b + " = @" + prefix + b));
+                    string.Format(filter[0] + " = @" + prefix) + filter.Aggregate((a, b) => a + " AND " + b + " = @" + prefix + b));
             }
             else
             {
@@ -51,7 +51,7 @@ namespace TradingCompany.DAL.Core
                     "Set " +
                     "{1} " +
                     " ,RowUpdateTime = getutcdate()" +
-                    "output inserted.Id " +
+                    " output inserted.Id " +
                     "{2} " +
                     ";", _tableName, values, condition);
 

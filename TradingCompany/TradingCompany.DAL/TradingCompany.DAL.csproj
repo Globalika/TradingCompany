@@ -52,7 +52,7 @@
     <Compile Include="Models\Entities\Abstract\IBaseEntity.cs" />
     <Compile Include="Models\Entities\Impl\Orders.cs" />
     <Compile Include="Models\Entities\Impl\OrdersToProduct.cs" />
-    <Compile Include="Models\Entities\Impl\Produt.cs" />
+    <Compile Include="Models\Entities\Impl\Product.cs" />
     <Compile Include="Models\Entities\Impl\Role.cs" />
     <Compile Include="Models\Entities\Impl\Supplier.cs" />
     <Compile Include="Models\Entities\Impl\SupplierToProduct.cs" />

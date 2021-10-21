@@ -64,6 +64,7 @@ ALTER TABLE tblOrders
 
 
 CREATE TABLE tblOrdersToProducts(
+    Id bigint not null IDENTITY(1,1) PRIMARY KEY,
     OrderId bigint not null,
     ProductId bigint not null,
     Quantity int not null,

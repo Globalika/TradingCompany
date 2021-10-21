@@ -52,7 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OrdersCRUDUnitTests.cs" />
+    <Compile Include="OrdersToProductCRUDUnitTests.cs" />
+    <Compile Include="ProductCRUDUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolesCRUDUnitTests.cs" />
+    <Compile Include="SuppliersCRUDUnitTests.cs" />
+    <Compile Include="SuppliersToProductCRUDUnitTests.cs" />
+    <Compile Include="UsersCRUDUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
