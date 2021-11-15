@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{026DDE83-C625-457C-BC36-4A121B7AB033}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TradingCompany.DAL</RootNamespace>
-    <AssemblyName>TradingCompany.DAL</AssemblyName>
+    <ProjectGuid>{2231930F-7B28-40B1-AFA6-678754D9D1EF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TradinigCompany.BLL</RootNamespace>
+    <AssemblyName>TradinigCompany.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,7 +37,6 @@
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -54,55 +55,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\ConnectionManager.cs" />
-    <Compile Include="Core\DbCommandManager.cs" />
-    <Compile Include="Core\DbManager.cs" />
-    <Compile Include="Database\MigrationManager.cs" />
-    <Compile Include="DependencyInjectorDAL.cs" />
-    <Compile Include="Models\Entities\Abstract\IBaseEntity.cs" />
-    <Compile Include="Models\Entities\Impl\Orders.cs" />
-    <Compile Include="Models\Entities\Impl\OrdersToProduct.cs" />
-    <Compile Include="Models\Entities\Impl\Product.cs" />
-    <Compile Include="Models\Entities\Impl\Role.cs" />
-    <Compile Include="Models\Entities\Impl\Supplier.cs" />
-    <Compile Include="Models\Entities\Impl\SupplierToProduct.cs" />
-    <Compile Include="Models\Entities\Impl\User.cs" />
-    <Compile Include="Models\Filters\Abstract\IFilterable.cs" />
-    <Compile Include="Models\Filters\Impl\OrderFilter.cs" />
-    <Compile Include="Models\Filters\Impl\OrderToProductFilter.cs" />
-    <Compile Include="Models\Filters\Impl\ProductFilter.cs" />
-    <Compile Include="Models\Filters\Impl\RoleFilter.cs" />
-    <Compile Include="Models\Filters\Impl\SupplierFilter.cs" />
-    <Compile Include="Models\Filters\Impl\SupplierToProductFilter.cs" />
-    <Compile Include="Models\Filters\Impl\UserFilter.cs" />
-    <Compile Include="Models\ObjectsMapper.cs" />
+    <Compile Include="DependencyInjectorBLL.cs" />
+    <Compile Include="DTO\CredentialsDTO.cs" />
+    <Compile Include="DTO\OrderDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\ProductsGroupDTO.cs" />
+    <Compile Include="DTO\SupplierDTO.cs" />
+    <Compile Include="DTO\SuppToProductDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Mapper\ObjectsMapper.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\SuppToProdViewModel.cs" />
+    <Compile Include="Models\UserRegistrationModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Abstarct\IBaseRepository.cs" />
-    <Compile Include="Repositories\Abstarct\IOrdersRepository.cs" />
-    <Compile Include="Repositories\Abstarct\IOrdersToProductRepository.cs" />
-    <Compile Include="Repositories\Abstarct\IProductsRepository.cs" />
-    <Compile Include="Repositories\Abstarct\IRolesRepository.cs" />
-    <Compile Include="Repositories\Abstarct\ISuppliersRepository.cs" />
-    <Compile Include="Repositories\Abstarct\ISuppliersToProductRepository.cs" />
-    <Compile Include="Repositories\Abstarct\IUserRepository.cs" />
-    <Compile Include="Repositories\BaseRepository.cs" />
-    <Compile Include="Repositories\Impl\OrdersRepository.cs" />
-    <Compile Include="Repositories\Impl\OrdersToProductsRepository.cs" />
-    <Compile Include="Repositories\Impl\ProductsRepository.cs" />
-    <Compile Include="Repositories\Impl\RolesRepository.cs" />
-    <Compile Include="Repositories\Impl\SuppliersRepository.cs" />
-    <Compile Include="Repositories\Impl\SuppliersToProductRepository.cs" />
-    <Compile Include="Repositories\Impl\UsersRepository.cs" />
-    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
-    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Security\PasswordHandler.cs" />
+    <Compile Include="Services\Abstract\IAuthenticationService.cs" />
+    <Compile Include="Services\Abstract\IOrderService.cs" />
+    <Compile Include="Services\Abstract\IProductService.cs" />
+    <Compile Include="Services\Abstract\IRoleService.cs" />
+    <Compile Include="Services\Abstract\ISupplierService.cs" />
+    <Compile Include="Services\Abstract\ISuppToProductService.cs" />
+    <Compile Include="Services\Abstract\IUserService.cs" />
+    <Compile Include="Services\Impl\AuthenticationService.cs" />
+    <Compile Include="Services\Impl\OrderService.cs" />
+    <Compile Include="Services\Impl\PorductService.cs" />
+    <Compile Include="Services\Impl\RoleService.cs" />
+    <Compile Include="Services\Impl\SupplierService.cs" />
+    <Compile Include="Services\Impl\SuppToProductService.cs" />
+    <Compile Include="Services\Impl\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="Database\create_tables.sql" />
-    <Content Include="Database\drop_tables.sql" />
-    <Content Include="Database\import_start_values.sql" />
+    <ProjectReference Include="..\TradingCompany.DAL\TradingCompany.DAL.csproj">
+      <Project>{026dde83-c625-457c-bc36-4a121b7ab033}</Project>
+      <Name>TradingCompany.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
