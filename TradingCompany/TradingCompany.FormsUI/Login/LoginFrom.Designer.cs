@@ -110,7 +110,6 @@
             this.button_create_account.Text = "Create Account]";
             this.button_create_account.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_create_account.UseVisualStyleBackColor = false;
-            this.button_create_account.Click += new System.EventHandler(this.Button_create_account_Click);
             // 
             // LoginForm
             // 

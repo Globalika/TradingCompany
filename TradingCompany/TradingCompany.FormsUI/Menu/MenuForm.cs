@@ -14,7 +14,7 @@ namespace TradingCompany.FormsUI.Menu
         public MenuForm(IOrderService orderService, IUserService userService, UserDTO user)
         {
             _orderService = orderService;
-            _userService = _userService;
+            _userService = userService;
             _user = user;
             InitializeComponent();
             SetUpForm();

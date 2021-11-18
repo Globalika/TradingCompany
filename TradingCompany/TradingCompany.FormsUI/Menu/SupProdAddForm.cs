@@ -66,7 +66,7 @@ namespace TradingCompany.FormsUI.Menu
 
         private void Combobox_product_SelectedIndexChanged(object sender, EventArgs e)
         {
-            combobox_supplier.Items.AddRange(_supplierService.GetSupplierByProduct(combobox_product.SelectedItem.ToString()).ToArray());
+            //combobox_supplier.Items.AddRange(_supplierService.GetSupplierByProduct(combobox_product.SelectedItem.ToString()).ToArray());
         }
 
         private void Button_cancel_Click(object sender, EventArgs e)

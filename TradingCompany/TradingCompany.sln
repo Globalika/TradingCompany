@@ -7,11 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.ConsoleUI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.DAL", "TradingCompany.DAL\TradingCompany.DAL.csproj", "{026DDE83-C625-457C-BC36-4A121B7AB033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.UnitTests", "TradingCompany.UnitTests\TradingCompany.UnitTests.csproj", "{FBAA0AFD-D91D-4D81-BE40-41C2266D24E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.DALUnitTests", "TradingCompany.UnitTests\TradingCompany.DALUnitTests.csproj", "{FBAA0AFD-D91D-4D81-BE40-41C2266D24E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.BLL", "TradinigCompany.BLL\TradingCompany.BLL.csproj", "{2231930F-7B28-40B1-AFA6-678754D9D1EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.FormsUI", "TradingCompany.FormsUI\TradingCompany.FormsUI.csproj", "{BACB379F-EB9F-4391-A1A8-4F0267CB1A31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingCompany.BLLUnitTests", "TradingCompany.BLLUnitTests\TradingCompany.BLLUnitTests.csproj", "{BC9B8CF9-3D02-44CC-9D13-EC266DDB10D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BACB379F-EB9F-4391-A1A8-4F0267CB1A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BACB379F-EB9F-4391-A1A8-4F0267CB1A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BACB379F-EB9F-4391-A1A8-4F0267CB1A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC9B8CF9-3D02-44CC-9D13-EC266DDB10D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC9B8CF9-3D02-44CC-9D13-EC266DDB10D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC9B8CF9-3D02-44CC-9D13-EC266DDB10D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC9B8CF9-3D02-44CC-9D13-EC266DDB10D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

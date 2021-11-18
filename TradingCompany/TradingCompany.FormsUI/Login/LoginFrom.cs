@@ -38,6 +38,8 @@ namespace TradingCompany.FormsUI.Login
 
         private void Button_sign_in_Click(object sender, EventArgs e)
         {
+            //string password = "12345678";
+           // string hashPassword = PasswordHandler.Hash(password);
             CredentialsDTO credentials = new CredentialsDTO()
             {
                 Login = textbox_email.Text,
